@@ -1,3 +1,7 @@
+<?php
+use App\Cms;
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
 <head>
@@ -15,6 +19,9 @@
 <div id="menu" style="height:600px">
 <p class="fixpng"><a href="/">Главная</a></p>
 <p class="fixpng"><a href="/news">Новости</a></p>
+<?php foreach(Cms::getNav() as $_item): ?>
+<p class="fixpng"><a href="{{ $_item->path }}">{{ $_item->title }}</a></p>
+<?php endforeach; ?>
 </div>
 
 <div id="content">
@@ -31,8 +38,8 @@
 <h1>"Сказка"</h1>
 <h6>г. Улан-Удэ</h6>
 <br /><br /><br />
-<h2>Титул</h2>
-<!-- content -->
+@yield('h2')
+@yield('content')
 </div>
 </div>
 </div>

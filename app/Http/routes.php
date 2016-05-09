@@ -11,7 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return view('layout.main');
+use App\Cms;
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', ['as'=>'home', 'uses' => 'HomeController@index']);
+
+Route::get('{cmsPath}', function($cmsPath)
+{
+    $page = Cms::where('path', $cmsPath)->first();
+    if(!$page) {
+        abort(404);
+    }
+
+    return view('cms', ['title' => $page->title, 'body' => base64_decode($page->body)]);
 });
