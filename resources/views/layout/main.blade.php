@@ -20,8 +20,13 @@ use App\Cms;
 <p class="fixpng"><a href="/">Главная</a></p>
 <p class="fixpng"><a href="/news">Новости</a></p>
 <?php foreach(Cms::getNav() as $_item): ?>
-<p class="fixpng"><a href="{{ $_item->path }}">{{ $_item->title }}</a></p>
+<p class="fixpng"><a href="/{{ $_item->path }}">{{ $_item->title }}</a></p>
 <?php endforeach; ?>
+@can('admin-content')
+<p class="fixpng">= = = = = = = = = =</p>
+<p class="fixpng"><a href="/admin">Админ</a></p>
+<p class="fixpng"><a href="/logout">Выйти</a></p>
+@endcan
 </div>
 
 <div id="content">

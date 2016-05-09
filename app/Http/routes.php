@@ -19,12 +19,18 @@ use App\Cms;
 
 Route::get('/', ['as'=>'home', 'uses' => 'HomeController@index']);
 
-Route::get('{cmsPath}', function($cmsPath)
+Route::group(['middleware' => 'admin'], function(){
+    Route::get('/admin', ['as'=>'admin', 'uses' => 'AdminController@index']);
+});
+
+Route::auth();
+
+Route::get('{slug}', function($slug)
 {
-    $page = Cms::where('path', $cmsPath)->first();
+    $page = Cms::where('path', $slug)->first();
     if(!$page) {
         abort(404);
     }
 
     return view('cms', ['title' => $page->title, 'body' => base64_decode($page->body)]);
-});
+})->where('slug', '([A-z\d-\/_.]+)?');

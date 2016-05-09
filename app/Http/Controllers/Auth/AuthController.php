@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+use Illuminate\Http\Request;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -49,8 +51,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'login' => 'required|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -64,9 +65,43 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'login' => $data['login'],
             'password' => bcrypt($data['password']),
         ]);
     }
+    
+    public function login(Request $request)
+    {
+        $this->validate($request, [
+            'login' => 'required', 'password' => 'required',
+        ]);
+        
+        if (Auth::attempt(['login' => $request->login, 'password' => $request->password])) {
+            return redirect()->intended('/admin');
+        }
+        
+        return redirect('/login')
+            ->withInput($request->only($this->loginUsername(), 'remember'))
+            ->withErrors([
+                'login' => $this->getFailedLoginMessage(),
+            ]);
+    }
+    
+    
+//    public function postLogin(Request $request)
+//    {      
+//        $this->validate($request, [
+//            'login' => 'required', 'password' => 'required',
+//        ]);
+//        
+//        if (Auth::attempt(['login' => $request->login, 'password' => $request->password])) {
+//            return redirect()->intended('/admin');
+//        }
+//        
+//        return redirect('/login')
+//            ->withInput($request->only($this->loginUsername(), 'remember'))
+//            ->withErrors([
+//                'login' => $this->getFailedLoginMessage(),
+//            ]);
+//    }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Cms;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,20 @@ class DatabaseSeeder extends Seeder
             'path' => 'my-test',
             'body' => base64_encode('<p>Тестовая страница</p>'),
             'is_main' => 1
+            ));
+        
+        Cms::create(array(
+            'title' => 'Тестовая страница CMS2',
+            'path' => 'my-test/test',
+            'body' => base64_encode('<p>Тестовая страница - 2</p>'),
+            'is_main' => 1
+            ));
+        
+        DB::table('users')->delete();
+        User::create(array(
+            'login' => 'admin',
+            'password' => bcrypt('admin'),
+            'role' => 1
             ));
     }
 }
