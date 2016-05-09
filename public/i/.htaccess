@@ -1,0 +1,3 @@
+RewriteEngine off
+
+ErrorDocument 404 /www/index.php

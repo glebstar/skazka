@@ -1,0 +1,529 @@
+*{    
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    background-image: url(../i/fon.jpg);
+    font-family: "Comic Sans MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.parent_box{
+    background-color: #fff;
+    color: #000;
+    text-align: center;    
+    margin-left: 10px;
+    padding-top: 15px;
+    width: 150px;
+    height: 70px;
+    float:left;
+}
+
+.int_environment .head_td{
+    background-color: #fff;
+    color: #090;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.int_environment .sep1{
+    width: 10px;    
+    color: Yellow;
+}
+
+.int_environment .child_td{  
+   text-align: center;
+}
+
+.int_environment .sep2{
+    height: 10px;
+}
+
+.programms_table{
+    border: solid 1px #fff;
+    width: 100%;
+}
+
+.programms_table caption{
+    padding-bottom: 7px;
+    text-align: left;
+}
+
+.programms_table thead td{    
+    color: #ff0;
+}
+
+.programms_table td{
+    text-align: center;
+    border: solid 1px #fff;
+    padding: 7px;
+}
+
+.fixpng 
+{    
+	filter: expression(fixPNG(this));
+}
+
+.fixpng a {
+	position: relative;
+}
+
+#main
+{    
+    width: 1076px;
+    height: 462px;
+    margin: 0 auto;
+    background-image: url(../i/leftdub.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+#topfon{
+    width: 768px;
+    margin: 0 auto;
+    background-color: #090;
+    background-image: url(../i/field.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+#header{
+    width: 768px;   
+    /*height: 1000px;*/ 
+    margin: 0 auto; 
+    background-image: url(../i/dub.png);
+    background-position: left top;
+    background-repeat: no-repeat;   
+}
+
+#menu{
+    margin-top: 257px;
+    margin-left: 5px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    width: 175px;
+    /*height: 800px;*/
+    float: left;
+}
+
+#menu p
+{
+    color: White;
+    width: 175px;
+    height: 29px;
+    font-size: 80%;
+    text-align: center;
+    background-image: url(../i/step.png);
+    background-position: left top;
+    background-repeat: no-repeat;  
+    padding-top: 3px;
+    margin-top:-4px;
+}
+
+#menu p.smallmenu{
+    font-size: 67%;
+    filter: expression(fixPNG(this));  
+}
+
+#menu p a{
+    color: White;
+    text-decoration: none;    
+}
+
+#menu p a:hover{
+    color: Yellow;
+    text-decoration: underline; 
+}
+
+#content
+{
+    color: White;
+    font-size: 90%;
+    padding-right: 20px;
+    margin-left: 50px;
+    background-image: url(../i/door.gif);
+    background-repeat: no-repeat;
+    background-position: 10px 149px;
+}
+
+#content img.door
+{
+    width: 96px;
+    height: 100px;
+    top: 134px;
+    left: 60px;
+    margin-bottom: -100px;
+    margin-right: -96px;
+    margin-left: -200px;
+    position: relative;
+}
+
+#midd_content
+{
+    margin-left: 150px;
+    padding: 0;
+    min-height: 600px;
+}
+
+#meteo{
+    float: right;
+    margin-left: -100px;
+}
+
+#content p{
+    text-indent: 20px;
+    text-align: justify;    
+}
+
+#content a{
+    color: White;    
+}
+
+#content a:hover{
+    color: Yellow;    
+}
+
+#content h1{
+    text-align: center;
+    color: #FF0066;
+    margin: 0.1em 0;
+    font-size: 300%;
+}
+
+#content h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#content h3{
+    text-align: center;    
+}
+
+#content h4{
+    text-align: center;       
+    margin: 0.1em 0;
+}
+
+#content h5{
+    text-align: center;       
+    margin: 0.1em 0;
+    font-style: normal;
+    font-size: 100%;
+}
+
+
+#content h6{
+    text-align: center;
+    color: Black;
+}
+
+#content p.stih{
+    text-indent: 0;
+    text-align: center;
+}
+
+#content img.img1
+{
+    width: 250px;
+    border-right: white 1px solid;
+    border-top: white 1px solid;
+    border-left: white 1px solid;
+    border-bottom: white 1px solid;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#konkurs
+{
+    left: 100%;
+    margin-left: -180px;
+    width: 170px;
+    position: fixed;
+    top: 10px;   
+    background-color: white;
+    border-right: Blue 2px solid;
+    border-top: Blue 2px solid;
+    border-left: Blue 2px solid;
+    border-bottom: Blue 2px solid;
+    color: #ff0066;
+    text-align: center;
+    background-image: url(../i/konkurs1.jpg);
+    background-repeat: no-repeat;
+    background-position: 10px 20px;
+}
+
+#konkurs a{
+    color: #ff0066;
+}
+
+#konkurs a:hover{
+    color: Blue;
+}
+
+.imgKonkurs
+{
+    width: 250px;
+    border-right: White 2px solid;
+    border-top: White 2px solid;
+    border-left: White 2px solid;
+    border-bottom: White 2px solid;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#weather
+{
+    width: 120px;
+    height: 156px;
+    left: 100%;
+    margin-left: -130px;
+    position: absolute;
+    top: 10px;    
+    border: solid 2px #f06;
+}
+
+#user_konk{
+    clear: both;
+    border-bottom: 1px dotted White;    
+}
+
+#user_konk i{
+    background-color: #FF0066;
+    font-size: 85%;
+}
+
+#user_konk img{
+    width: 330px;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;   
+    margin-right: 20px; 
+}
+
+#user_konk p{
+    clear: both;
+    margin-bottom: 10px;
+    text-indent: 0;
+}
+
+#mult
+{
+    width: 57px;
+    height: 600px;
+    float: left;
+    background-image: url(../i/mult.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    margin-top: 280px;
+    margin-left: -20px;
+    margin-right: -57px;
+}
+
+#bears
+{
+    width: 768px;
+    height: 162px;  
+    margin: 0 auto;  
+    background-color: #009900; 
+    clear:both;
+}
+.prim{    
+    font-style: italic;
+    text-align: left;
+    font-size: 85%; 
+    margin-bottom: 10px;        
+}
+
+#loggins{
+    margin-left: 250px;
+}
+
+#loggins input{	
+	width: 130px;		
+	margin: 0 0 10px 0;	    
+}
+
+#loggins label {
+	float: left;
+	text-align: right;
+	margin-right: 15px;
+	width: 100px;		
+}
+
+.news
+{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: white 1px dotted;
+}
+
+.news i{
+    background-color: #FF0066;
+    font-size: 85%;
+}
+
+.news img{
+    vertical-align: top;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px; 
+    border: solid 1px #fff;
+}
+#recQ{
+    margin-left: 150px;
+}
+#recQ input, textarea{
+    width: 250px;
+}
+#recQ textarea{
+    height: 80px;
+}
+
+#recQ .star{
+    font-size: 120%;
+    color: #ff0;
+}
+
+.recbook{    
+    border-bottom: white 1px dotted;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-bottom: 15px;
+}
+.recbook textarea
+{
+    width: 520px;
+    height: 80px;
+    background-image: url(../i/kletka.gif);
+}
+
+.recbook i{
+    background-color: #FF0066;
+    font-size: 85%;
+}
+
+.yellow
+{
+    color: #ff0;
+}
+
+.size150
+{
+    font-size:150%; 
+    margin-top: 30px;
+    margin-bottom: 15px;   
+}
+
+.size120
+{
+    font-size:120%; 
+    margin-top: 30px;
+    margin-bottom: 15px;   
+}
+
+.tbl_photo td
+{
+    border: solid 1px White;
+}
+
+.plan_table 
+{
+    border: solid 1px #fff;
+    width: 530px;
+}
+
+.plan_table th, .plan_table td
+{
+     background-color: #fff;
+     border: solid 1px #000;
+}
+
+.plan_table th 
+{
+    color: #00f;
+    padding: 5px;
+}
+
+.plan_table td
+{
+    color: #000;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.plan_table td img
+{
+    width: 400px;
+    margin: 0;
+}
+
+.f_login td
+{
+    border: 0;
+    background-color: Transparent;
+}
+
+.prs_tbl_img { width: 150px; border: solid 1px #fff; }
+.prs_alp_img { width: 500px; border: solid 1px #fff; }
+
+.errors
+{
+    background-color: #f00;
+    color: Yellow;
+}
+
+.pageing
+{
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 7px;
+}
+
+.pageing .arrow_emp
+{
+    text-decoration: none;
+}
+
+.pageing .noactive
+{
+    color: #333;
+}
+
+.pageing .active
+{
+    background-color: #FF0066;
+    font-size: 115%;
+    padding: 0 5px 0 5px;
+    border-bottom: solid 1px #fff;
+    border-right: solid 1px #fff;
+}
+
+#new_page_form input, textarea
+{
+    width: 400px;
+}
+
+#new_page_form table td
+{
+	vertical-align: top;
+}
+
+#new_page_form #new_page_body
+{
+	margin-left: -20px;
+}
+
+h4.error_msg
+{
+	color: #f00;
+	background-color: Yellow;
+}
+
+.filedownload { padding: 15px; }
+.filedownload table td { padding-right: 10px; }
