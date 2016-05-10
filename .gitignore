@@ -6,3 +6,5 @@ Homestead.json
 .env
 /nbproject
 /public/robots.txt
+/public/files
+!/public/files/.gitkeep

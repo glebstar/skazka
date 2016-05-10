@@ -8,9 +8,13 @@ use App\Cms;
 <meta http-equiv="content-type" content="text/html; charset=windows-1251" />
 <meta name="description" content="Официальный сайт детского сада № 42 Сказка(ГДОУ № 42 МО РФ), г. Улан-Удэ" />
 <meta name="keywords" content="г. Улан-Удэ, детский сад, для детей, детям, дошкольное образование" />
+
+<title>Детский сад № 42 "Сказка", г. Улан-Удэ, ст. Дивизионная</title>
+
 <link rel="stylesheet" href="/css/style.css?version=1" type="text/css" />
 <script type="text/javascript" src="/js/main.js?version=1"></script>
-<title>Детский сад № 42 "Сказка", г. Улан-Удэ, ст. Дивизионная</title>
+
+@yield('js')
 </head>
 <body>
 <div id="main" class="fixpng">

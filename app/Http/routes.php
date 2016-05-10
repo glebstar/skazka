@@ -12,6 +12,7 @@
 */
 
 use App\Cms;
+use Illuminate\Http\Request;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -21,6 +22,16 @@ Route::get('/', ['as'=>'home', 'uses' => 'HomeController@index']);
 
 Route::group(['middleware' => 'admin'], function(){
     Route::get('/admin', ['as'=>'admin', 'uses' => 'AdminController@index']);
+    Route::get('/admin/main', function(){
+        $page = Cms::where('path', '')->first();
+        return view('admin.main', ['body' => $page->body]);
+    });
+    
+    Route::post('/admin/main/save', function(Request $request){
+        $body = base64_encode($request->editor1);
+        Cms::where('path', '')->update(['body' => $body]);
+        return redirect('/');
+    });
 });
 
 Route::auth();

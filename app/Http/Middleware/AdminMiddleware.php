@@ -15,7 +15,7 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         if (Gate::denies('admin-content')) {
-            //return redirect('/');
+            return redirect('/login');
         }
         
         return $next($request);

@@ -527,3 +527,10 @@ h4.error_msg
 
 .filedownload { padding: 15px; }
 .filedownload table td { padding-right: 10px; }
+
+input[type="submit"] {
+    margin-top: 15px;
+    padding: 5px 3px;
+    cursor: pointer;
+    border: solid 1px #ff0;
+}

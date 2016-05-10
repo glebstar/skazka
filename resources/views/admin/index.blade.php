@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<a href="/admin/editmain">Редактировать главную страницу</a><br />
+<a href="/admin/main">Редактировать главную страницу</a><br />
 <a href="/admin/news">Новости</a><br />
 <a href="/admin/cms">Внутренние страницы</a><br />
 @endsection
