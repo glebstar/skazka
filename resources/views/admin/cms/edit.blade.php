@@ -35,6 +35,7 @@ foreach ($errors->all() as $message)
             </textarea>
             
             <input type="submit" value="Сохранить" />
+            <a href='#' onclick="confirmDelPage('{{ $title}}', {{ $id }}); return false;">Удалить эту страницу</a>
             <script>
                 CKEDITOR.replace( 'editor1',  {
                     language: 'ru',

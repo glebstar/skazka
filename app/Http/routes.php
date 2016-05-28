@@ -15,10 +15,6 @@ use App\Cms;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdminCmsSaveRequest;
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/', ['as'=>'home', 'uses' => 'HomeController@index']);
 
 Route::group(['middleware' => 'admin'], function(){
@@ -56,7 +52,6 @@ Route::group(['middleware' => 'admin'], function(){
     });
     
     Route::get('/admin/cms', function(){
-        //$pages = Cms::all()->orderBy('path', 'asc');
         $pages = Cms::where('path', '<>', '')
                 ->orderBy('sort')
                 ->orderBy('path')
@@ -77,8 +72,7 @@ Route::group(['middleware' => 'admin'], function(){
     });
     
     Route::get('/admin/cms/del/{id}', function($id){
-        Cms::destroy($id);
-        
+        Cms::destroy($id);      
         return redirect('/admin/cms');
     });
 });
