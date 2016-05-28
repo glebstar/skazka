@@ -54,6 +54,21 @@ Route::group(['middleware' => 'admin'], function(){
 
         return redirect('/' . $request->path);
     });
+    
+    Route::get('/admin/cms', function(){
+        return view('admin.cms');
+    });
+    
+    Route::get('/admin/cms/add', function(){
+        return view('admin.cms.add');
+    });
+    
+    Route::post('/admin/cms/add/save', function(AdminCmsSaveRequest $request){
+        $page = new Cms();
+        $page->savePage($request);
+
+        return redirect('/' . $request->path);
+    });
 });
 
 Route::auth();
