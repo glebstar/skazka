@@ -13,6 +13,7 @@
 
 use App\Cms;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdminCmsSaveRequest;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -32,6 +33,27 @@ Route::group(['middleware' => 'admin'], function(){
         Cms::where('path', '')->update(['body' => $body]);
         return redirect('/');
     });
+    
+    Route::get('/admin/cms/edit/{id}', function($id){
+        $page = Cms::where('id', $id)->first();
+        if(!$page) {
+            abort(404);
+        }
+        
+        if($page->path == '') {
+            abort(404);
+        }
+        
+        return view('admin.cms.edit', ['id' => $page->id, 'path' => $page->path, 'title' => $page->title, 'sort' => $page->sort, 'isMain' => $page->is_main, 'body' => $page->body]);
+    });
+    
+    Route::post('/admin/cms/edit/save/{id}', function(AdminCmsSaveRequest $request, $id){
+        // валидация происходит в классе AdminCmsSaveRequest
+        $page = Cms::where('id', $id)->first();
+        $page->savePage($request);
+
+        return redirect('/' . $request->path);
+    });
 });
 
 Route::auth();
@@ -43,5 +65,5 @@ Route::get('{slug}', function($slug)
         abort(404);
     }
 
-    return view('cms', ['title' => $page->title, 'body' => base64_decode($page->body)]);
+    return view('cms', ['id' => $page->id, 'title' => $page->title, 'body' => base64_decode($page->body)]);
 })->where('slug', '([A-z\d-\/_.]+)?');

@@ -11,7 +11,11 @@ use App\Cms;
 
 <title>Детский сад № 42 "Сказка", г. Улан-Удэ, ст. Дивизионная</title>
 
+<link rel="stylesheet" href="/jquery-ui/jquery-ui.min.css" type="text/css" />
 <link rel="stylesheet" href="/css/style.css?version=1" type="text/css" />
+
+<script type="text/javascript" src="/jquery-ui/external/jquery/jquery.js"></script>
+<script type="text/javascript" src="/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/main.js?version=1"></script>
 
 @yield('js')

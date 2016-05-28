@@ -534,3 +534,20 @@ input[type="submit"] {
     cursor: pointer;
     border: solid 1px #ff0;
 }
+
+input[type="text"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 3px 2px;
+    width: 100%;
+}
+
+input[type="text"].small {
+    width: 60px;
+}
+
+p.error {
+    padding: 3px 2px;
+    background-color: #f00;
+    color: #fff;
+}

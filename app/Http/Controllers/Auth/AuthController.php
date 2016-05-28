@@ -86,22 +86,4 @@ class AuthController extends Controller
                 'login' => $this->getFailedLoginMessage(),
             ]);
     }
-    
-    
-//    public function postLogin(Request $request)
-//    {      
-//        $this->validate($request, [
-//            'login' => 'required', 'password' => 'required',
-//        ]);
-//        
-//        if (Auth::attempt(['login' => $request->login, 'password' => $request->password])) {
-//            return redirect()->intended('/admin');
-//        }
-//        
-//        return redirect('/login')
-//            ->withInput($request->only($this->loginUsername(), 'remember'))
-//            ->withErrors([
-//                'login' => $this->getFailedLoginMessage(),
-//            ]);
-//    }
 }

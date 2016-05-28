@@ -6,7 +6,7 @@
 
 @section('content')
 @can('admin-content')
-<p><a href="/admin/main">Редактировать</a></p><br />
+<p><a href="/admin/cms/edit/{{ $id }}">Редактировать</a></p><br />
 @endcan
 <?php echo $body ?>
 @endsection
