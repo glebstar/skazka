@@ -24,7 +24,7 @@ class AdminCmsSaveRequest extends Request
     public function rules()
     {
         return [
-            'path'    => 'required|max:70|regex:/^[a-z][a-z\-0-9\/]+[^\/]$/',
+            'path'    => 'required|max:70|not_in:admin|regex:/^[a-z][a-z\-0-9\/]+[^\/]$/',
             'title'   => 'required|max:100',
             'sort'    => 'required|integer|min:1|max:5000',
             'is_main' => 'required|boolean'

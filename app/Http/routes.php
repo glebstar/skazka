@@ -56,7 +56,13 @@ Route::group(['middleware' => 'admin'], function(){
     });
     
     Route::get('/admin/cms', function(){
-        return view('admin.cms');
+        //$pages = Cms::all()->orderBy('path', 'asc');
+        $pages = Cms::where('path', '<>', '')
+                ->orderBy('sort')
+                ->orderBy('path')
+                ->get();
+        
+        return view('admin.cms', ['pages' => $pages]);
     });
     
     Route::get('/admin/cms/add', function(){
