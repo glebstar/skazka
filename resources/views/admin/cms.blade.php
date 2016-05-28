@@ -18,6 +18,7 @@
 
 <table>
     <tr>
+        <th>#</th>
         <th>Url (путь)</th>
         <th>Заголовок</th>
         <th></th>
@@ -25,12 +26,14 @@
     </tr>
     @foreach ($pages as $page)
     <tr>
+        <td>{{ $page->sort }}</td>
         <td>{{ $page->path }}</td>
         <td>{{ $page->title }}</td>
         <td><a href="/admin/cms/edit/{{ $page->id }}">Редактировать</a></td>
-        <td><a href="#">Удалить</a></td>
+        <td><a href="#" onclick="confirmDelPage('{{ $page->title}}', {{ $page->id }}); return false;">Удалить</a></td>
     </tr>
     @endforeach
 </table>
-
+<div id="dlg-save" style="display: none;"></div>
 @endsection
+

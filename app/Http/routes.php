@@ -75,6 +75,12 @@ Route::group(['middleware' => 'admin'], function(){
 
         return redirect('/' . $request->path);
     });
+    
+    Route::get('/admin/cms/del/{id}', function($id){
+        Cms::destroy($id);
+        
+        return redirect('/admin/cms');
+    });
 });
 
 Route::auth();

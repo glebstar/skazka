@@ -551,3 +551,19 @@ p.error {
     background-color: #f00;
     color: #fff;
 }
+
+table {
+    border-spacing: 0;
+    border: solid 1px #fff;
+}
+
+table th {
+    background-color: #fff;
+    color: #FF0066;
+    border: solid 1px #090;
+}
+
+table td {
+    border: solid 1px #fff;
+    padding: 3px 7px;
+}

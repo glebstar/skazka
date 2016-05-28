@@ -9,7 +9,7 @@ $(document).ready(function(){
             return false;
         }
         
-        if(!/^[a-z][a-z0-9\/-]+[^\/]$/.test($('#edit-form-path').val())) {
+        if(!/^[a-z][a-z0-9\/-]+[a-z]$/.test($('#edit-form-path').val())) {
             editFormShowError('Поле путь некорректно!');           
             return false;
         }
@@ -69,5 +69,26 @@ function editFormShowError(message) {
     });
 }
 
-
+function confirmDelPage(title, id) {
+    $("#dlg-save").html('Удалить страницу ' + title + '?').dialog({
+        title: 'Подтвердите!',
+        modal: true,
+        width: 400,
+        buttons: [
+            {
+                text: "Да, удалить",
+                click: function() {
+                    $(this).dialog( "close" );
+                    window.location.href = '/admin/cms/del/' + id;
+                }
+            },
+            {
+                text: "Нет, вы чо нах",
+                click: function() {
+                    $(this).dialog( "close" );
+                }
+            }
+        ]
+     });
+}
 
