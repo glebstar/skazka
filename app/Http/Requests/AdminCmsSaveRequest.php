@@ -22,9 +22,14 @@ class AdminCmsSaveRequest extends Request
      * @return array
      */
     public function rules()
-    {
+    {   
+        $pathRule = 'required|max:70|unique:cms|not_in:admin|regex:/^[a-z][a-z\-0-9\/]+[a-z]$/';
+        if (self::has('id')) {
+            $pathRule = 'required|max:70|unique:cms,path,' . self::input('id') . '|not_in:admin|regex:/^[a-z][a-z\-0-9\/]+[a-z]$/';
+        }
+        
         return [
-            'path'    => 'required|max:70|not_in:admin|regex:/^[a-z][a-z\-0-9\/]+[a-z]$/',
+            'path'    => $pathRule,
             'title'   => 'required|max:100',
             'sort'    => 'required|integer|min:1|max:5000',
             'is_main' => 'required|boolean'

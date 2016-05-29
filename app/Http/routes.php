@@ -72,6 +72,12 @@ Route::group(['middleware' => 'admin'], function(){
     });
     
     Route::get('/admin/cms/del/{id}', function($id){
+        // главную страницу удалять нельзя
+        $mainPage = Cms::where('path', '')->first();
+        if ($id == $mainPage->id) {
+            abort(404);
+        }
+        
         Cms::destroy($id);      
         return redirect('/admin/cms');
     });

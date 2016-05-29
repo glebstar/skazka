@@ -17,7 +17,8 @@ foreach ($errors->all() as $message)
 
 @section('content')
         <form id="edit-form" method="post" action="/admin/cms/edit/save/{{ $id }}" data-confirm="0">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">           
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">     
+            <input type="hidden" name="id" value="{{ $id }}"> 
             <label>Путь:</label><br />
             <input id="edit-form-path" type="text" name="path" value="{{ $path }}" />
             <label>Заголовок:</label><br />
